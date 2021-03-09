@@ -1,16 +1,14 @@
-
-
 // console.log(col.red('Hi There'))
 const express =require('express');
-
 const app = express();
-
 
 //listening to request and accessing data from a server API to send a response back
 var request = require('request');
 
+//will look view folder for our files to display
 app.set("view engine", "ejs");
 
+//route1 to display homepage
 app.get("/results",(req, res)=>{
     //render means display
     
@@ -46,8 +44,6 @@ app.get("/getmovies", (req, res)=>{
         }
     })
 });
-
-
 
 app.get("*",(req, res)=>{
     res.send("Uh oh something get wrong");
