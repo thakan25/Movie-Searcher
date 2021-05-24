@@ -57,6 +57,6 @@ app.get("*",(req, res)=>{
     res.send("Uh oh something get wrong");
 })
 
-app.listen(8000,()=>{
+app.listen(3000,()=>{
     console.log("Server has started");
 });
