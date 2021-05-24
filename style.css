@@ -1,0 +1,30 @@
+body {
+    
+    padding-top:5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+}
+
+.card {
+    margin: 2%;
+    padding: 2% 2% 2% 2%;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 5px 10px #888888;
+
+}
+
+ /* .search{
+     margin-left: 40%;
+     margin-right: 40%;
+     
+ } */
+h1 {
+    text-align: center;
+    margin-left: 40%;
+}
+
+
+
