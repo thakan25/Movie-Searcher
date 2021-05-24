@@ -9,7 +9,7 @@ var request = require('request');
 app.set("view engine", "ejs");
 
 //route1 to display homepage
-app.get("/homepage",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("homepage.ejs");
 })
 
@@ -45,7 +45,7 @@ app.get("/getMovies", (req, res)=>{
                 res.send("Movie Not Found!");
             }
 
-            res.render("intro", {movieData : data});
+            res.render("results", {movieData : data});
         }
         else{
             res.send("Something went wrong !!");
