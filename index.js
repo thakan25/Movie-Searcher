@@ -38,7 +38,7 @@ app.get("/getMovies", (req, res)=>{
             //body contains JSON format data
             
             const data = JSON.parse(body);
-            console.log(response)
+            console.log(data)
             //console.log(data);
             //let pass data to intro.ejs
             if( data.Response === 'False'){
