@@ -13,6 +13,9 @@ app.get("/",(req,res)=>{
     res.render("homepage.ejs");
 })
 
+app.get("/homepage",(req,res)=>{
+    res.render("homepage.ejs");
+})
 // app.get("/search",(req, res)=>{
 //     //render means display
     
@@ -20,9 +23,19 @@ app.get("/",(req,res)=>{
 //     console.log(req.query);
 // });
 
-app.get("/class",(req, res)=>{
-    console.log("I am in console");
-    res.send("you are in class");
+app.get("/moreInfo",(req, res)=>{
+    const url = `http://www.omdbapi.com/?apikey=9a2a9bd8&t=${req.query.Title}`;
+
+    request(url, function(error, response, body){
+        if(!error && response.statusCode==200){
+            const data = JSON.parse(body);
+
+            res.render("knowMore",{info: data});
+        }
+        else{
+            res.send("OOps something get wrong!! Try again");
+        }
+    })
   
 })
 
@@ -31,15 +44,15 @@ app.get("/aboutMe", function(req,res){
 })
 
 app.get("/getMovies", (req, res)=>{
-    console.log("Hello World!");
+    //console.log("Hello World!");
     const url = `http://www.omdbapi.com/?apikey=9a2a9bd8&s=${req.query.movieName}`;
     request(url, function(error, response, body){
         if(!error && response.statusCode==200){
             //body contains JSON format data
-            
+            //console.log(body)
             const data = JSON.parse(body);
-            console.log(data)
-            //console.log(data);
+            
+            console.log(data);
             //let pass data to intro.ejs
             if( data.Response === 'False'){
                 res.send("Movie Not Found!");
