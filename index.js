@@ -70,6 +70,8 @@ app.get("*",(req, res)=>{
     res.send("Uh oh something get wrong");
 })
 
-app.listen(3000,()=>{
+const port = process.env.port || 3000;
+
+app.listen(port,()=>{
     console.log("Server has started");
 });
