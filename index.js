@@ -44,7 +44,7 @@ app.get("/aboutMe", function(req,res){
 })
 
 app.get("/getMovies", (req, res)=>{
-    //console.log("Hello World!");
+    console.log(req);
     const url = `http://www.omdbapi.com/?apikey=9a2a9bd8&s=${req.query.movieName}`;
     request(url, function(error, response, body){
         if(!error && response.statusCode==200){
