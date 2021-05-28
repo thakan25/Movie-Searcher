@@ -21,7 +21,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/aboutMe">AboutMe</a>
         </li>
-        <!-- <li class="nav-item dropdown">
+     <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
           </a>
@@ -43,33 +43,18 @@
   
    <%- include('partials/header')%>
   <div class="container">
+      <div >
+          <img class ="flex" src="<%=info.Poster%>">
+          <h3><%= info.Title %> </h3>
+          <p>
+              Year: <%= info.Year %>
+              <br>
 
-    <%var len = movieData['Search'].length %>
-    <%var cnt = 1%>
-    <%var j = 1%>
-    
-    <% movieData['Search'].forEach(function(movie) {%>
-    <%if(j%3==1){%>
-      <div class="row justify-content-around">
-      <%}%>
-       <%cnt = cnt + 1%>
-        <div class = "card text-white bg-dark mb-3" class="col-sm-4" style="width: 18rem">
-            <img class="card-img-top" src="<%= movie.Poster%>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%=movie.Title%></h5>
-              <p class="card-text">
-               Year: <%=movie.Year%><br>
-               Type: <%=movie.Type%>
-              </p>
-              <a href="/moreInfo?Title=<%=movie.Title%>" class="btn btn-primary">Know more</a>
-            </div>
+              Plot:  <p><%= info.Plot %></p> 
+          </p>
         </div>  
-    <%if(j%3==0){%>
-      </div>
-    <%}%>
-    <%j = j + 1%>
 
-    <%}) %>
+      </div>
 
   </div>
   
